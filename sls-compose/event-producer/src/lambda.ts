@@ -18,6 +18,9 @@ export const handler = async (event: APIGatewayProxyEventV2WithRequestContext<an
 
   if (method === 'POST') {
     responseMsg = JSON.stringify({ "output":"added", ...JSON.parse(event.body)})
+    
+    const my_event_body: my_object = {event_key: "hello", event_name: "world"}
+    
   } else {
     responseCode = 400
     responseMsg = `Invalid HTTP method: ${method}`
